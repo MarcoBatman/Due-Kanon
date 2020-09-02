@@ -5,5 +5,16 @@ public class Due_Kanon extends PApplet{
         PApplet.main("name");
     }
 
+Cannon pCannon = new Cannon(this);
 
+    @Override
+    public void setup() {
+        super.setup();
+    }
+
+    @Override
+    public void draw() {
+        pCannon.display();
+
+}
 }
