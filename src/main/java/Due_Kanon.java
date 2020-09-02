@@ -18,6 +18,7 @@ public class Due_Kanon extends PApplet{
     @Override
     public void setup() {
         super.setup();
+
     }
 
     @Override
