@@ -19,7 +19,7 @@ public class Ducks {
     }
 
     void drawduck(){
-        
+
 
     }
 
