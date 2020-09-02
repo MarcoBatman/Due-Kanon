@@ -5,28 +5,31 @@ import processing.core.PVector;
 public class Ducks {
     int posX;
     int posY;
-    PImage duck;
+    PImage d;
+
+
+
     PVector location = new PVector(posX,posY);
     PVector Velocity = new PVector();
     PApplet p;
-    Ducks(PApplet p, PImage duck){
+    Ducks(PApplet p, PImage d){
 this.p=p;
-this.duck=duck;
+this.d=d;
 posY=0;
 posX=0;
     }
 
-    Ducks(PApplet p,int x,int y,PImage i){
+    Ducks(PApplet p,int x,int y,PImage d){
        posX = x;
        posY = y;
        this.p =p;
-       duck = i;
+       this.d = d;
 
     }
 
     void drawduck(){
 
-    p.image(duck,location.x,location.y);
+    p.image(d,100,100,64,64);
 
     }
 

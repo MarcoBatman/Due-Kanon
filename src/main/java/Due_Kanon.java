@@ -6,8 +6,9 @@ public class Due_Kanon extends PApplet{
     public static void main(String[] args ) {
         PApplet.main("Due_Kanon");
     }
-    PImage duckpic;
-    Ducks duck1 = new Ducks(this);
+
+    PImage coolduck;
+
 
     @Override
     public void settings() {
@@ -19,12 +20,14 @@ public class Due_Kanon extends PApplet{
     @Override
     public void setup() {
         super.setup();
-        duckpic = loadImage("Duck Duck go.png");
+        coolduck = loadImage("Duck Duck Go.png");
 
     }
 
+    Ducks duck1 = new Ducks(this,100,100, coolduck);
     @Override
     public void draw() {
+
         pCannon.display();
         duck1.drawduck();
 
