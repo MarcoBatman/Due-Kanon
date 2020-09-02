@@ -1,11 +1,12 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 import processing.core.PVector;
 
 public class Due_Kanon extends PApplet{
     public static void main(String[] args ) {
         PApplet.main("Due_Kanon");
     }
-
+    PImage duckpic;
     Ducks duck1 = new Ducks(this);
 
     @Override
@@ -18,6 +19,7 @@ public class Due_Kanon extends PApplet{
     @Override
     public void setup() {
         super.setup();
+        duckpic = loadImage("Duck Duck go.png");
 
     }
 

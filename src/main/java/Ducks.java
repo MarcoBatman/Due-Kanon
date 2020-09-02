@@ -9,8 +9,9 @@ public class Ducks {
     PVector location = new PVector(posX,posY);
     PVector Velocity = new PVector();
     PApplet p;
-    Ducks(PApplet p){
-
+    Ducks(PApplet p, PImage duck){
+this.p=p;
+this.duck=duck;
 
     }
 
@@ -22,7 +23,7 @@ public class Ducks {
     }
 
     void drawduck(){
-    
+
     p.image(duck,posX,posY);
 
     }
