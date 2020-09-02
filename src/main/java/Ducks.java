@@ -12,7 +12,8 @@ public class Ducks {
     Ducks(PApplet p, PImage duck){
 this.p=p;
 this.duck=duck;
-
+posY=0;
+posX=0;
     }
 
     Ducks(PApplet p,int x,int y,PImage i){
@@ -20,11 +21,12 @@ this.duck=duck;
        posY = y;
        this.p =p;
        duck = i;
+
     }
 
     void drawduck(){
 
-    p.image(duck,posX,posY);
+    p.image(duck,location.x,location.y);
 
     }
 
