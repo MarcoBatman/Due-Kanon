@@ -7,7 +7,7 @@ public class Due_Kanon extends PApplet{
         PApplet.main("Due_Kanon");
     }
     PImage duckpic;
-    Ducks duck1 = new Ducks(this);
+    Ducks duck1 = new Ducks(this,duckpic);
 
     @Override
     public void settings() {
