@@ -3,16 +3,17 @@ import processing.core.PVector;
 
 public class Due_Kanon extends PApplet{
     public static void main(String[] args ) {
-        PApplet.main("name");
+        PApplet.main("Due_Kanon");
     }
 
-Cannon pCannon = new Cannon(this);
+    Ducks duck1 = new Ducks(this);
 
     @Override
     public void settings() {
         super.settings();
         size(500,500);
     }
+    Cannon pCannon = new Cannon(this,width,height);
 
     @Override
     public void setup() {
@@ -22,6 +23,7 @@ Cannon pCannon = new Cannon(this);
     @Override
     public void draw() {
         pCannon.display();
+        duck1.drawduck();
 
 }
 }
