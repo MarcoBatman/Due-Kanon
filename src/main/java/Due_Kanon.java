@@ -7,7 +7,7 @@ public class Due_Kanon extends PApplet{
     public static void main(String[] args ) {
         PApplet.main("Due_Kanon");
     }
-    PImage coolduck;
+
     int width = 500;
     int height = 500;
 
@@ -24,19 +24,19 @@ public class Due_Kanon extends PApplet{
     @Override
     public void setup() {
         super.setup();
-        coolduck = loadImage("Duck Duck Go.png");
-
+        duck1.loadimage();
     }
-  //  Ducks duck1 = new Ducks(this,duckpic);
+    //Ducks duck1 = new Ducks(this);
 
-    Ducks duck1 = new Ducks(this,100,100, coolduck);
+     Ducks duck1 = new Ducks(this,100,100,0);
     @Override
     public void draw() {
         clear();
         pCannon.display();
         pCannon.checkInput();
         pCannon.move();
-     //   duck1.drawduck();
+        duck1.drawduck();
+        duck1.move();
 
 }
 }
