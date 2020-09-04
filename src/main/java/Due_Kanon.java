@@ -3,8 +3,8 @@ import processing.core.PImage;
 import processing.core.PVector;
 
 
-public class Due_Kanon extends PApplet{
-    public static void main(String[] args ) {
+public class Due_Kanon extends PApplet {
+    public static void main(String[] args) {
         PApplet.main("Due_Kanon");
     }
 
@@ -15,11 +15,11 @@ public class Due_Kanon extends PApplet{
     public void settings() {
         super.settings();
 
-        size(width,height);
+        size(width, height);
 
     }
 
-    Cannon pCannon = new Cannon(this,width,height);
+    Cannon pCannon = new Cannon(this, width, height);
 
     @Override
     public void setup() {
@@ -29,7 +29,8 @@ public class Due_Kanon extends PApplet{
     }
     //Ducks duck1 = new Ducks(this);
 
-     Ducks duck1 = new Ducks(this,100, (int) random(20,100),5);
+    Ducks duck1 = new Ducks(this, 100, (int) random(20, 100), 5);
+
     @Override
     public void draw() {
         clear();
@@ -42,8 +43,8 @@ public class Due_Kanon extends PApplet{
         duck1.hitwall();
 
 
+    }
 
-}
     public void keyPressed() {
 
         pCannon.setMove(keyCode, true);
