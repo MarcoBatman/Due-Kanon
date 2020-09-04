@@ -22,19 +22,29 @@ velocity.set(0,0);
     }
 
     void drawduck(){
-    p.image(dl,location.x,location.y,64,64);
+        if(velocity.x<0){
+            p.image(dl,location.x,location.y,64,64);
+        }
+        if(velocity.x>=0){
+            p.image(dr,location.x,location.y-10,64,64);
+        }
 
-     p.image(dr,location.x,location.y,64,64);
+
     }
 
     void loadimage(){
+
         dl = p.loadImage("Duck Duck Go Left.png");
         dr = p.loadImage("Duck Duck Go Right.png");
     }
     void move(){
         location.add(velocity);
     }
-
+    void hitwall(){
+        if(location.x> p.width-64||location.x<0){
+            velocity.mult(-1);
+        }
+    }
 
 
 }

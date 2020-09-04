@@ -28,7 +28,7 @@ public class Due_Kanon extends PApplet{
     }
     //Ducks duck1 = new Ducks(this);
 
-     Ducks duck1 = new Ducks(this,100,100,0);
+     Ducks duck1 = new Ducks(this,100,100,5);
     @Override
     public void draw() {
         clear();
@@ -37,6 +37,7 @@ public class Due_Kanon extends PApplet{
         pCannon.move();
         duck1.drawduck();
         duck1.move();
+        duck1.hitwall();
 
 }
 }
