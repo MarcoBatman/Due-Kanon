@@ -15,7 +15,7 @@ public class Barrel {
     }
 
     void cannonPlacement(){
-        x= c.CLocation.x+26*(float)1.75;
+        x= c.CLocation.x+26*(float)1.49;
         y= c.CLocation.y-25/2;
     }
 void display(){

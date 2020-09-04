@@ -19,7 +19,7 @@ public class Cannon {
         this.height = height;
         this.width = width;
         p.println(width);
-        CLocation.set(width / 2, height - 120);
+        CLocation.set(width / 2, height - 100);
 
 
     }
@@ -37,7 +37,7 @@ public class Cannon {
             mX -= 1;
         }
         if (dRight) {
-            if (CLocation.x + 26 * 4 == width) {
+            if (CLocation.x + 26 * 3 == width) {
                 mX -= 1;
             }
             mX += 1;
