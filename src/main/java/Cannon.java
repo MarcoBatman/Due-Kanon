@@ -21,9 +21,9 @@ CLocation.set(width/2,height-50);
 
 void checkInput(){
   if(p.keyPressed){
-    if(p.key== 'a'||p.key== 'A')
+    if(p.key== 'a'||p.key== 'A'||p.keyCode== p.LEFT)
       CVelocity.set(-2,0);
-    else if(p.key == 'd'||p.key== 'D')
+    else if(p.key == 'd'||p.key== 'D'||p.keyCode==p.RIGHT)
       CVelocity.set(2,0);
     else
       CVelocity.set(0,0);
