@@ -7,13 +7,15 @@ public class Cannon {
     boolean dUp, dDown, dLeft, dRight;
     int width;
     int height;
+    imageLoader iL;
     PImage tank;
     PVector CVelocity = new PVector(1, 0);
     PVector CLocation = new PVector();
 
 
-    Cannon(PApplet p, int width, int height) {
+    Cannon(PApplet p, int width, int height,imageLoader iL) {
         this.p = p;
+        this.iL = iL;
         this.height = height;
         this.width = width;
         p.println(width);
@@ -51,14 +53,10 @@ public class Cannon {
         CLocation.add(CVelocity);
     }
 
-    void loadimage() {
 
-        tank = p.loadImage("TankTrimmed.png");
-        tank.resize(26 * 4, 25 * 4);
-    }
 
     void display() {
-        p.image(tank, CLocation.x, CLocation.y);
+        p.image(iL.tank, CLocation.x, CLocation.y);
 //p.ellipse(CLocation.x,CLocation.y,100,100);
 
 

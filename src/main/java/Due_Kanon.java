@@ -10,8 +10,8 @@ public class Due_Kanon extends PApplet {
         PApplet.main("Due_Kanon");
     }
 
-    int width = 500;
-    int height = 500;
+    int width = 1830/2;
+    int height = 873/2;
     ArrayList<Shit> shitlist= new ArrayList<Shit>();
     @Override
     public void settings() {
@@ -20,24 +20,34 @@ public class Due_Kanon extends PApplet {
         size(width, height);
 
     }
-    Ducks duck1 = new Ducks(this, 100, (int) random(20, 100), 5);
-    Cactus cac1 = new Cactus(this,200);
-
-    Cannon pCannon = new Cannon(this,width,height);
-    Barrel pBarrel = new Barrel(this,pCannon);
+  
 
     @Override
     public void setup() {
         super.setup();
+       iL.load();
+        /*
         duck1.loadimage();
         cac1.loadpic();
         pCannon.loadimage();
+        */
+
     }
 
+    imageLoader iL= new imageLoader(this);;
+    Cactus cac1 = new Cactus(this,200,iL);
+    Ducks duck1 = new Ducks(this,100, (int) random(20,100),5,iL);
+    Cannon pCannon = new Cannon(this,width,height,iL);
+    Barrel pBarrel = new Barrel(this,pCannon,iL);
 
     @Override
     public void draw() {
         clear();
+        image(iL.sky,0,0);
+        pCannon.display();
+        pCannon.checkVel();
+        pCannon.move();
+        pBarrel.cannonPlacement();
         duck1.shit();
         duck1.drawduck();
         duck1.move();
