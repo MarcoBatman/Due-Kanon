@@ -26,11 +26,7 @@ public class Due_Kanon extends PApplet {
     public void setup() {
         super.setup();
        iL.load();
-        /*
-        duck1.loadimage();
-        cac1.loadpic();
-        pCannon.loadimage();
-        */
+
 
     }
 
@@ -42,6 +38,7 @@ public class Due_Kanon extends PApplet {
 
     @Override
     public void draw() {
+
         clear();
         image(iL.sky,0,0);
         cac1.drawcac();
@@ -54,6 +51,7 @@ public class Due_Kanon extends PApplet {
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
+
         if(duck1.iShitNow==true){
             shitlist.add(new Shit(this,duck1.location.x,duck1.location.y));
         }

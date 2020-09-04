@@ -56,6 +56,7 @@ public class Cannon {
 
 
     void display() {
+
         p.image(iL.tank, CLocation.x, CLocation.y);
 //p.ellipse(CLocation.x,CLocation.y,100,100);
 

@@ -9,8 +9,8 @@ public class imageLoader {
 
     }
 void load(){
-    barrel = p.loadImage("Barrel.png");
-    barrel.resize(7*3,17*3);
+    barrel = p.loadImage("Barrelmiddle.png");
+    barrel.resize(7*3,17*2*3);
     tank = p.loadImage("TankTrimmed.png");
     tank.resize(26*3,25*3);
     dl = p.loadImage("Duck Duck Go Left.png");
