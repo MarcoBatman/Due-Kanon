@@ -19,18 +19,20 @@ public class Due_Kanon extends PApplet {
 
     }
 
-    Cannon pCannon = new Cannon(this, width, height);
+    Cannon pCannon = new Cannon(this,width,height);
+    Barrel pBarrel = new Barrel(this,pCannon);
 
     @Override
     public void setup() {
         super.setup();
         duck1.loadimage();
+        cac1.loadpic();
         pCannon.loadimage();
     }
     //Ducks duck1 = new Ducks(this);
 
     Ducks duck1 = new Ducks(this, 100, (int) random(20, 100), 5);
-
+    Cactus cac1 = new Cactus(this,200);
     @Override
     public void draw() {
         clear();
@@ -38,9 +40,11 @@ public class Due_Kanon extends PApplet {
         pCannon.display();
         pCannon.checkVel();
         pCannon.move();
+        pBarrel.cannonPlacement();
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
+        cac1.drawcac();
 
 
     }
