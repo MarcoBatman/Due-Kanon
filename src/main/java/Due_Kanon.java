@@ -33,11 +33,27 @@ public class Due_Kanon extends PApplet{
     public void draw() {
         clear();
         pCannon.display();
-        pCannon.checkInput();
+        pCannon.checkVel();
         pCannon.move();
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
 
+
+
 }
+    public void keyPressed() {
+
+        pCannon.setMove(keyCode, true);
+
+
+    }
+
+    public void keyReleased() {
+
+        pCannon.setMove(keyCode, false);
+
+    }
 }
+
+
