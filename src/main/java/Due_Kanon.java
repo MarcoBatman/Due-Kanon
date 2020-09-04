@@ -20,6 +20,7 @@ public class Due_Kanon extends PApplet{
     }
 
     Cannon pCannon = new Cannon(this,width,height);
+    Barrel pBarrel = new Barrel(this,pCannon);
 
     @Override
     public void setup() {
@@ -38,6 +39,7 @@ public class Due_Kanon extends PApplet{
         pCannon.display();
         pCannon.checkVel();
         pCannon.move();
+        pBarrel.cannonPlacement();
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
