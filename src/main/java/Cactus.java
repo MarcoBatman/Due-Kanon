@@ -8,19 +8,18 @@ public class Cactus {
     PApplet p;
     PVector location = new PVector(0,100);
     PImage d;
+    imageLoader iL;
     Cactus(PApplet p){
         this.p=p;
 
     }
-    Cactus(PApplet p,int x){
+    Cactus(PApplet p,int x,imageLoader iL){
        location.x=x;
        this.p=p;
-    }
-    void loadpic(){
-        d = p.loadImage("New Catus.png");
+       this.iL = iL;
     }
 
     void drawcac(){
-        p.image(d,location.x,p.height-150,64*2,64*2);
+        p.image(iL.d,location.x,p.height-150,64*2,64*2);
     }
 }
