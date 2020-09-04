@@ -44,7 +44,7 @@ velocity.set(0,0);
         }
     }
     void shit(){
-    shitRNG = (int) p.random(0,69);
+    shitRNG = (int) p.random(0,1);
     if(shitRNG==0 && iShitNow == false){
         iShitNow=true;
     }

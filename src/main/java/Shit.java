@@ -23,14 +23,13 @@ PVector accelaration = new PVector(0,1);
     velocity.add(accelaration);
     location.add(velocity);
     }
-    void hitTank(Cannon Tank,boolean gameover){
-        float afstand = p.dist(location.x,location.y,Tank.CLocation.x,Tank.CLocation.y);
-        float minAfstand=5;
-            if(afstand <= minAfstand){
-                p.text("Du er blevet skidt på",p.width/2,p.height/2);
-            gameover=true;
+    void hitTank(Cannon Tank, boolean gameover){
+
+            if((location.x <= Tank.CLocation.x+20*3||location.x >= Tank.CLocation.x) && (location.y >= Tank.CLocation.y+25*3||location.y <= Tank.CLocation.y)){
+            gameover = true;
         }
 
+        
     }
 }
 
