@@ -28,7 +28,7 @@ public class Due_Kanon extends PApplet{
     }
     //Ducks duck1 = new Ducks(this);
 
-     Ducks duck1 = new Ducks(this,100,100,5);
+     Ducks duck1 = new Ducks(this,100, (int) random(20,100),5);
     @Override
     public void draw() {
         clear();

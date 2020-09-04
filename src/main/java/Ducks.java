@@ -28,8 +28,6 @@ velocity.set(0,0);
         if(velocity.x>=0){
             p.image(dr,location.x,location.y-10,64,64);
         }
-
-
     }
 
     void loadimage(){
