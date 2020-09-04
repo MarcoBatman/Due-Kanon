@@ -28,7 +28,7 @@ public class Due_Kanon extends PApplet{
         cac1.loadpic();
         pCannon.loadimage();
     }
-    //Ducks duck1 = new Ducks(this);
+    
     Cactus cac1 = new Cactus(this,200);
      Ducks duck1 = new Ducks(this,100, (int) random(20,100),5);
     @Override
