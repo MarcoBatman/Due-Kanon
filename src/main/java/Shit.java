@@ -23,13 +23,14 @@ PVector accelaration = new PVector(0,1);
     velocity.add(accelaration);
     location.add(velocity);
     }
-    void hitTank(Cannon Tank, boolean gameover){
+    boolean hitTank(Cannon Tank, boolean gameover){
 
-            if((location.x <= Tank.CLocation.x+20*3||location.x >= Tank.CLocation.x) && (location.y >= Tank.CLocation.y+25*3||location.y <= Tank.CLocation.y)){
-            gameover = true;
+            if((location.x <= Tank.CLocation.x+20*3||location.x >= Tank.CLocation.x) && (location.y <= Tank.CLocation.y+25*3||location.y >= Tank.CLocation.y)){
+             return true;
         }
+            else{return  false;}
 
-        
+
     }
 }
 

@@ -60,7 +60,7 @@ public class Due_Kanon extends PApplet {
             shitlist.get(i).drawshit();
             if(shitlist.get(i).location.y>=height){
             //shitlist.remove(i);
-            shitlist.get(i).hitTank(pCannon,gameover);
+            gameover = shitlist.get(i).hitTank(pCannon,gameover);
             }
         println(gameover);
         if(gameover == true){
