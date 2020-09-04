@@ -33,7 +33,7 @@ public class Due_Kanon extends PApplet {
     }
     //Ducks duck1 = new Ducks(this);
 
-    imageLoader iL= new imageLoader(this);;
+    imageLoader iL= new imageLoader(this);
     Cactus cac1 = new Cactus(this,200,iL);
     Ducks duck1 = new Ducks(this,100, (int) random(20,100),5,iL);
     Cannon pCannon = new Cannon(this,width,height,iL);
@@ -44,6 +44,7 @@ public class Due_Kanon extends PApplet {
         clear();
         image(iL.sky,0,0);
         pCannon.display();
+        pBarrel.display();
         pCannon.checkVel();
         pCannon.move();
         pBarrel.cannonPlacement();
