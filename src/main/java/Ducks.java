@@ -25,6 +25,7 @@ velocity.set(0,0);
     void drawduck(){
         if(velocity.x<0){
             p.image(iL.dl,location.x,location.y,64,64);
+
         }
         if(velocity.x>=0){
             p.image(iL.dr,location.x,location.y-10,64,64);
@@ -39,6 +40,10 @@ velocity.set(0,0);
         if(location.x> p.width-64||location.x<0){
             velocity.mult(-1);
         }
+    }
+    void shit(){
+
+        
     }
 
 
