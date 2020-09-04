@@ -22,7 +22,7 @@ velocity.set(0,0);
     }
 
     void drawduck(){
-        if(velocity.x<0){
+        if (velocity.x < 0) {
             p.image(dl,location.x,location.y,64,64);
         }
         if(velocity.x>=0){
