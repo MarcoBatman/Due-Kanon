@@ -25,13 +25,6 @@ PVector accelaration = new PVector(0,(float)0.2);
     velocity.add(accelaration);
     location.add(velocity);
     }
-    boolean hitTank(Cannon Tank){
 
-            if(location.x <= Tank.CLocation.x+26*3 && location.x >= Tank.CLocation.x && location.y <= Tank.CLocation.y+25*3 && location.y >= Tank.CLocation.y){
-             return true;
-        }
-
-            return false;
-    }
 }
 
