@@ -39,6 +39,7 @@ public class Due_Kanon extends PApplet {
     @Override
     public void draw() {
         if(gameover == false) {
+            fill(255);
             clear();
             image(iL.sky, 0, 0);
 
@@ -71,9 +72,10 @@ public class Due_Kanon extends PApplet {
         }
 
         println(gameover);
-
+        textSize(80);
+        fill(0,255,0);
         if(gameover == true){
-            text("Du er blevet skidt på",width/2,height/2);
+            text("Du er blevet skidt på",0,height/2);
         }
 
 
