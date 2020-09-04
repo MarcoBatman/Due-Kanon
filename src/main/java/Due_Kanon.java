@@ -41,32 +41,35 @@ public class Due_Kanon extends PApplet {
 
         clear();
         image(iL.sky,0,0);
+
         cac1.drawcac();
         pCannon.display();
         pBarrel.display();
         pCannon.checkVel();
         pCannon.move();
         pBarrel.cannonPlacement();
+        if(duck1.iShitNow==true){
+            shitlist.add(new Shit(this,duck1.location.x,duck1.location.y));
+        }
+        for(int i =0;i<shitlist.size();i++) {
+            shitlist.get(i).moveshit();
+            shitlist.get(i).drawshit();
+            if (shitlist.get(i).location.y >= height) {
+                //shitlist.remove(i);
+                gameover = shitlist.get(i).hitTank(pCannon);
+            }
+        }
         duck1.shit();
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
 
-        if(duck1.iShitNow==true){
-            shitlist.add(new Shit(this,duck1.location.x,duck1.location.y));
-        }
-        for(int i =0;i<shitlist.size();i++){
-            shitlist.get(i).moveshit();
-            shitlist.get(i).drawshit();
-            if(shitlist.get(i).location.y>=height){
-            //shitlist.remove(i);
-            gameover = shitlist.get(i).hitTank(pCannon,gameover);
-            }
+
         println(gameover);
         if(gameover == true){
             text("Du er blevet skidt på",width/2,height/2);
         }
-        }
+
 
 
 
