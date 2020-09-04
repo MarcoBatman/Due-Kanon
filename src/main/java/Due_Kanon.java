@@ -25,9 +25,10 @@ public class Due_Kanon extends PApplet{
     public void setup() {
         super.setup();
         duck1.loadimage();
+        cac1.loadpic();
     }
     //Ducks duck1 = new Ducks(this);
-
+    Cactus cac1 = new Cactus(this,200);
      Ducks duck1 = new Ducks(this,100, (int) random(20,100),5);
     @Override
     public void draw() {
@@ -38,6 +39,7 @@ public class Due_Kanon extends PApplet{
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
+        cac1.drawcac();
 
 }
 }
