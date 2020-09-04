@@ -9,7 +9,7 @@ public class Due_Kanon extends PApplet {
     public static void main(String[] args) {
         PApplet.main("Due_Kanon");
     }
-    boolean gameover = false;
+    boolean gameover;
     int width = 1830/2;
     int height = 873/2;
     ArrayList<Shit> shitlist= new ArrayList<Shit>();
@@ -39,6 +39,31 @@ public class Due_Kanon extends PApplet {
 
     @Override
     public void draw() {
+        if(gameover == false) {
+            fill(255);
+            clear();
+            image(iL.sky, 0, 0);
+
+            cac1.drawcac();
+            pCannon.display();
+            pBarrel.display();
+            pCannon.checkVel();
+            pCannon.move();
+            pBarrel.cannonPlacement();
+            if (duck1.iShitNow == true) {
+                shitlist.add(new Shit(this, duck1.location.x, duck1.location.y));
+            }
+            for (int i = 0; i < shitlist.size(); i++) {
+                shitlist.get(i).moveshit();
+                shitlist.get(i).drawshit();
+
+                //shitlist.remove(i);
+
+                if (shitlist.get(i).location.x <= pCannon.CLocation.x + 26 * 3 && shitlist.get(i).location.x >= pCannon.CLocation.x && shitlist.get(i).location.y <= pCannon.CLocation.y + 25 * 3 && shitlist.get(i).location.y >= pCannon.CLocation.y) {
+                    gameover = true;
+
+                }
+
 
         clear();
         image(iL.sky,0,0);
@@ -67,10 +92,13 @@ public class Due_Kanon extends PApplet {
             shitlist.get(i).hitTank(pCannon,gameover);
             }
        // println(gameover);
+
+        textSize(80);
+        fill(0,255,0);
         if(gameover == true){
-            text("Du er blevet skidt på",width/2,height/2);
+            text("Du er blevet skidt på",0,height/2);
         }
-        }
+
 
 
 
