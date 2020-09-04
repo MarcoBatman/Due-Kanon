@@ -25,6 +25,7 @@ public class Due_Kanon extends PApplet{
     public void setup() {
         super.setup();
         duck1.loadimage();
+        pCannon.loadimage();
     }
     //Ducks duck1 = new Ducks(this);
 
@@ -32,6 +33,7 @@ public class Due_Kanon extends PApplet{
     @Override
     public void draw() {
         clear();
+
         pCannon.display();
         pCannon.checkVel();
         pCannon.move();
