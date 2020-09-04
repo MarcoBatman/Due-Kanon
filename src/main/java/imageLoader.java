@@ -3,12 +3,14 @@ import processing.core.PImage;
 
 public class imageLoader {
     PApplet p;
-    PImage tank,dl,dr,d,sky;
+    PImage tank,dl,dr,d,sky,barrel;
     imageLoader(PApplet p){
         this.p=p;
 
     }
 void load(){
+    barrel = p.loadImage("Barrel.png");
+    barrel.resize(7*4,17*4);
     tank = p.loadImage("TankTrimmed.png");
     tank.resize(26*4,25*4);
     dl = p.loadImage("Duck Duck Go Left.png");
