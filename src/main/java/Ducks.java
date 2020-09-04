@@ -43,6 +43,10 @@ velocity.set(0,0);
             velocity.mult(-1);
         }
     }
+    void shit(){
+
+        
+    }
 
 
 
