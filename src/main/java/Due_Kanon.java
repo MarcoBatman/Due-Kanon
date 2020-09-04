@@ -44,6 +44,7 @@ public class Due_Kanon extends PApplet {
     public void draw() {
         clear();
         image(iL.sky,0,0);
+        cac1.drawcac();
         pCannon.display();
         pBarrel.display();
         pCannon.checkVel();
@@ -60,11 +61,8 @@ public class Due_Kanon extends PApplet {
             shitlist.get(i).moveshit();
             shitlist.get(i).drawshit();
         }
-        cac1.drawcac();
-        pCannon.display();
-        pCannon.checkVel();
-        pCannon.move();
-        pBarrel.cannonPlacement();
+
+
 
 
 
