@@ -71,6 +71,13 @@ public class Due_Kanon extends PApplet {
 
     }
 
+    public void mousePressed(){
+        if(mouseButton == LEFT){
+            pBarrel.shoot();
+
+        }
+    }
+
     public void keyPressed() {
 
         pCannon.setMove(keyCode, true);
