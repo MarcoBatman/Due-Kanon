@@ -77,6 +77,7 @@ public class Due_Kanon extends PApplet {
                 pBarrel.cannonPlacement();
 
                 for (int i = 0; i < duckList.size(); i++) {
+
                     duckList.get(i).shit();
                     duckList.get(i).drawduck();
                     duckList.get(i).move();

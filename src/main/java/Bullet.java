@@ -21,11 +21,42 @@ public class Bullet {
          this.iL = iL;
 duckList = aD;
     }
+    float smallestX(float x,float y){
+
+return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle)*y);
+    }
+    float smallestY(float x,float y){
+        return Math.min(actualLocation.y-y-x*p.cos(angle),actualLocation.y+y-x*p.cos(angle));
+    }
+    float biggestX(float x,float y){
+        return Math.max(actualLocation.x-x+p.sin(angle)*y,actualLocation.x+x+p.sin(angle)*y);
+    }
+    float biggestY(float x,float y){
+        return Math.max(actualLocation.y-y+x*p.cos(angle),actualLocation.y+y+x*p.cos(angle));
+    }
 
     void checkCollide(){
-      actualLocation.set(p.cos(angle)*bLocation.x+cLocation.x,p.sin(angle)*bLocation.x+cLocation.x);
-        System.out.println(actualLocation);
-    }
+      actualLocation.set(p.cos(angle)*bLocation.x+cLocation.x,p.sin(angle)*bLocation.x+cLocation.y);
+        float pLengthX = p.cos(angle)*(61/2);//Pigeon Length X
+        float pLengthY =p.sin(angle)*(34/2);//Pigeon Length X
+
+        float dLX = 61; //Duck Length X
+        float dLY=34;//Duck Length Y
+
+        float bigY= biggestY(pLengthX,pLengthY);
+        float smallX =smallestX(pLengthX,pLengthY);
+        float bigX =biggestX(pLengthX,pLengthY);
+        float smallY =smallestY(pLengthX,pLengthY);
+//p.rect(smallX,smallY,bigX-smallX,bigY-smallY);
+        for(int i =0;i<duckList.size();i++){
+          float dX = duckList.get(i).location.x ;//Duck Position X
+        float dY=duckList.get(i).location.y;//Duck Position X
+
+        if (((bigX>dX && bigX<dX+dLX)||(smallX>dX && smallX<dX+dLX))&&((smallY>dY && smallY<dY+dLY)||(bigY>dY && bigY<dY+dLY))) {
+duckList.remove(i);
+            duckList.add(new Ducks(p,100, (int) p.random(20,100),5,iL));
+        }
+    }}
     void display(){
 
         p.pushMatrix();

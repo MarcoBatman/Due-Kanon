@@ -25,12 +25,13 @@ velocity.set(0,0);
     }
 
     void drawduck(){
+        p.imageMode(p.CORNER);
         if(velocity.x<0){
-            p.image(iL.dl,location.x,location.y,64,64);
+            p.image(iL.dl,location.x,location.y,61,34);
 
         }
         if(velocity.x>=0){
-            p.image(iL.dr,location.x,location.y-10,64,64);
+            p.image(iL.dr,location.x,location.y,61,34);
         }
     }
 
