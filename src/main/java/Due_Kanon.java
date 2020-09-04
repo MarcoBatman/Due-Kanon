@@ -13,6 +13,7 @@ public class Due_Kanon extends PApplet {
     int width = 1830/2;
     int height = 873/2;
     ArrayList<Shit> shitlist= new ArrayList<Shit>();
+    ArrayList<Ducks> duckList= new ArrayList<Ducks>();
     @Override
     public void settings() {
         super.settings();
@@ -26,15 +27,15 @@ public class Due_Kanon extends PApplet {
     public void setup() {
         super.setup();
        iL.load();
-
+        duckList.add(new Ducks(this,100, (int) random(20,100),5,iL));
 
     }
 
     imageLoader iL= new imageLoader(this);
     Cactus cac1 = new Cactus(this,200,iL);
-    Ducks duck1 = new Ducks(this,100, (int) random(20,100),5,iL);
+    //Ducks duck1 = new Ducks(this,100, (int) random(20,100),5,iL);
     Cannon pCannon = new Cannon(this,width,height,iL);
-    Barrel pBarrel = new Barrel(this,pCannon,iL);
+    Barrel pBarrel = new Barrel(this,pCannon,iL,duckList);
 
     @Override
     public void draw() {
@@ -47,14 +48,17 @@ public class Due_Kanon extends PApplet {
         pCannon.checkVel();
         pCannon.move();
         pBarrel.cannonPlacement();
-        duck1.shit();
-        duck1.drawduck();
-        duck1.move();
-        duck1.hitwall();
 
-        if(duck1.iShitNow==true){
-            shitlist.add(new Shit(this,duck1.location.x,duck1.location.y));
-        }
+        for(int i =0;i<duckList.size();i++){
+            duckList.get(i).shit();
+        duckList.get(i).drawduck();
+        duckList.get(i).move();
+        duckList.get(i).hitwall();
+
+        if(duckList.get(i).iShitNow==true){
+            shitlist.add(new Shit(this,duckList.get(i).location.x,duckList.get(i).location.y));
+        }}
+
         for(int i =0;i<shitlist.size();i++){
             shitlist.get(i).moveshit();
             shitlist.get(i).drawshit();
@@ -62,7 +66,7 @@ public class Due_Kanon extends PApplet {
             //shitlist.remove(i);
             shitlist.get(i).hitTank(pCannon,gameover);
             }
-        println(gameover);
+       // println(gameover);
         if(gameover == true){
             text("Du er blevet skidt på",width/2,height/2);
         }

@@ -4,6 +4,7 @@ import processing.core.PVector;
 import java.util.ArrayList;
 
 public class Barrel {
+    ArrayList<Ducks> duckList;
     PVector bLocation = new PVector();
     PVector vMouse = new PVector();
    float x,y;
@@ -14,10 +15,11 @@ public class Barrel {
 
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
-    Barrel(PApplet p,Cannon c,imageLoader iL){
+    Barrel(PApplet p,Cannon c,imageLoader iL,ArrayList<Ducks> aD){
         this.c=c;
         this.p = p;
         this.iL = iL;
+        duckList=aD;
     }
 
     Barrel(){
@@ -35,7 +37,7 @@ public class Barrel {
     }
 
     void shoot(){
-bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL));
+bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL,duckList));
 
 
 
@@ -44,9 +46,15 @@ bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL));
 
 
 void display(){
+
+
     for(int i=0;i<bullets.size();i++) {
-        bullets.get(i).move();
         bullets.get(i).display();
+        bullets.get(i).checkCollide();
+      if(bullets.get(i).move()==true) {
+          bullets.remove(i);
+          break;
+      }
     }
 
     p.pushMatrix();
