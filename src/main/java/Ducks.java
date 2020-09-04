@@ -51,7 +51,7 @@ velocity.set(0,0);
     else{
         iShitNow=false;
     }
-       p.println(iShitNow);
+      // p.println(iShitNow);
     }
 
 

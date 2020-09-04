@@ -9,7 +9,7 @@ public class Due_Kanon extends PApplet {
     public static void main(String[] args) {
         PApplet.main("Due_Kanon");
     }
-
+    boolean gameover = false;
     int width = 1830/2;
     int height = 873/2;
     ArrayList<Shit> shitlist= new ArrayList<Shit>();
@@ -60,6 +60,10 @@ public class Due_Kanon extends PApplet {
         for(int i =0;i<shitlist.size();i++){
             shitlist.get(i).moveshit();
             shitlist.get(i).drawshit();
+            if(shitlist.get(i).location.y>=height){
+            shitlist.remove(i);
+            }
+
         }
 
 
