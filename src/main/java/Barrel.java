@@ -32,7 +32,7 @@ void display(){
     p.pushMatrix();
     p.imageMode(p.CENTER);
     p.translate(bLocation.x,bLocation.y);
-    p.println(angle);
+    //p.println(angle);
     p.rotate(angle);
 p.image(iL.barrel,0,0);
 p.imageMode(p.CORNER);
