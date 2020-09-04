@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PVector;
 
+import java.util.ArrayList;
+
 
 public class Due_Kanon extends PApplet {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Due_Kanon extends PApplet {
 
     int width = 1830/2;
     int height = 873/2;
-
+    ArrayList<Shit> shitlist= new ArrayList<Shit>();
     @Override
     public void settings() {
         super.settings();
@@ -18,7 +20,7 @@ public class Due_Kanon extends PApplet {
         size(width, height);
 
     }
-
+  
 
     @Override
     public void setup() {
@@ -31,7 +33,6 @@ public class Due_Kanon extends PApplet {
         */
 
     }
-    //Ducks duck1 = new Ducks(this);
 
     imageLoader iL= new imageLoader(this);
     Cactus cac1 = new Cactus(this,200,iL);
@@ -43,15 +44,27 @@ public class Due_Kanon extends PApplet {
     public void draw() {
         clear();
         image(iL.sky,0,0);
+        cac1.drawcac();
         pCannon.display();
         pBarrel.display();
         pCannon.checkVel();
         pCannon.move();
         pBarrel.cannonPlacement();
+        duck1.shit();
         duck1.drawduck();
         duck1.move();
         duck1.hitwall();
-        cac1.drawcac();
+        if(duck1.iShitNow==true){
+            shitlist.add(new Shit(this,duck1.location.x,duck1.location.y));
+        }
+        for(int i =0;i<shitlist.size();i++){
+            shitlist.get(i).moveshit();
+            shitlist.get(i).drawshit();
+        }
+
+
+
+
 
 
     }

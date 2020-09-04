@@ -9,6 +9,8 @@ public class Ducks {
     PVector location = new PVector();
     PVector velocity = new PVector();
     PApplet p;
+    int shitRNG;
+    boolean iShitNow = false;
     Ducks(PApplet p){
 this.p=p;
 location.set(0,0);
@@ -42,9 +44,17 @@ velocity.set(0,0);
         }
     }
     void shit(){
-
-        
+    shitRNG = (int) p.random(0,69);
+    if(shitRNG==0 && iShitNow == false){
+        iShitNow=true;
     }
+    else{
+        iShitNow=false;
+    }
+       p.println(iShitNow);
+    }
+
+
 
 
 
