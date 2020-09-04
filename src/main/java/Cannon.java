@@ -42,7 +42,7 @@ public class Cannon {
         }
 
         CVelocity.set(mX, mY);
-        p.println(mX);
+        //p.println(mX);
     }
 
 
