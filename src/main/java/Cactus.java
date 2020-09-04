@@ -21,6 +21,6 @@ public class Cactus {
     }
 
     void drawcac(){
-        p.image(d,location.x,location.y,96,96);
+        p.image(d,location.x,p.height-150,64*2,64*2);
     }
 }
