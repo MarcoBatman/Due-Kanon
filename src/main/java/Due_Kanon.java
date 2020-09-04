@@ -8,8 +8,8 @@ public class Due_Kanon extends PApplet {
         PApplet.main("Due_Kanon");
     }
 
-    int width = 500;
-    int height = 500;
+    int width = 1830/2;
+    int height = 873/2;
 
     @Override
     public void settings() {
@@ -42,7 +42,7 @@ public class Due_Kanon extends PApplet {
     @Override
     public void draw() {
         clear();
-
+        image(iL.sky,0,0);
         pCannon.display();
         pCannon.checkVel();
         pCannon.move();

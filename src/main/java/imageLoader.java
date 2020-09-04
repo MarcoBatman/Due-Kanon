@@ -3,7 +3,7 @@ import processing.core.PImage;
 
 public class imageLoader {
     PApplet p;
-    PImage tank,dl,dr,d;
+    PImage tank,dl,dr,d,sky;
     imageLoader(PApplet p){
         this.p=p;
 
@@ -14,6 +14,9 @@ void load(){
     dl = p.loadImage("Duck Duck Go Left.png");
     dr = p.loadImage("Duck Duck Go Right.png");
     d = p.loadImage("New Catus.png");
+    sky =  p.loadImage("skycool.png");
+    sky.resize(1830/2,873/2);
+
 
 }
 
