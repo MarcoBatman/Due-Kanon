@@ -11,6 +11,7 @@ public class Cannon {
     PImage tank;
     PVector CVelocity = new PVector(1, 0);
     PVector CLocation = new PVector();
+    int hp =3;
 
 
     Cannon(PApplet p, int width, int height,imageLoader iL) {

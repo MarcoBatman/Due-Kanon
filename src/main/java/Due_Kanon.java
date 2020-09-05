@@ -12,6 +12,8 @@ public class Due_Kanon extends PApplet {
     boolean gameover;
     int width = 1830/2;
     int height = 873/2;
+    boolean alredyRemoved;
+
     ArrayList<Shit> shitlist= new ArrayList<>();
     ArrayList<Ducks> duckList= new ArrayList<>();
     @Override
@@ -43,56 +45,47 @@ public class Due_Kanon extends PApplet {
             fill(255);
             clear();
             image(iL.sky, 0, 0);
-
             cac1.drawcac();
             pCannon.display();
             pBarrel.display();
             pCannon.checkVel();
             pCannon.move();
             pBarrel.cannonPlacement();
-            for (int i2 = 0; i2 < duckList.size(); i2++)
-            if (duckList.get(i2).iShitNow == true) {
-                shitlist.add(new Shit(this, duckList.get(i2).location.x, duckList.get(i2).location.y));
-            }
+            for (int i = 0; i < duckList.size(); i++){
+            if (duckList.get(i).iShitNow == true) {
+                shitlist.add(new Shit(this, duckList.get(i).location.x, duckList.get(i).location.y));
+            }}
 
             for (int i = 0; i < shitlist.size(); i++) {
                 shitlist.get(i).moveshit();
                 shitlist.get(i).drawshit();
 
-                //shitlist.remove(i);
-
-                if (shitlist.get(i).location.x <= pCannon.CLocation.x + 26 * 3 && shitlist.get(i).location.x >= pCannon.CLocation.x && shitlist.get(i).location.y <= pCannon.CLocation.y + 25 * 3 && shitlist.get(i).location.y >= pCannon.CLocation.y) {
-                    gameover = true;
-
-                }}
 
 
-                clear();
-                image(iL.sky, 0, 0);
-                cac1.drawcac();
-                pCannon.display();
-                pBarrel.display();
-                pCannon.checkVel();
-                pCannon.move();
-                pBarrel.cannonPlacement();
+                if (shitlist.get(i).location.x <= pCannon.CLocation.x + 25 * 3 && shitlist.get(i).location.x >= pCannon.CLocation.x && shitlist.get(i).location.y <= pCannon.CLocation.y + 25 * 3 && shitlist.get(i).location.y >= pCannon.CLocation.y) {
+                    pCannon.hp -= 1;
+                    shitlist.remove(i);
+                    alredyRemoved = true;
 
+                }
+                if(alredyRemoved == false && shitlist.get(i).location.y > height){
+                    shitlist.remove(i);
+                } else {
+                    alredyRemoved = false;
+                }
+            }
+            textSize(30);
+            text(pCannon.hp,200,200);
+
+            if(pCannon.hp == 0){
+                gameover = true;
+            }
                 for (int i = 0; i < duckList.size(); i++) {
-
                     duckList.get(i).shit();
                     duckList.get(i).drawduck();
                     duckList.get(i).move();
                     duckList.get(i).hitwall();
-
-                    if (duckList.get(i).iShitNow == true) {
-                        shitlist.add(new Shit(this, duckList.get(i).location.x, duckList.get(i).location.y));
-                    }
                 }
-
-                for (int i = 0; i < shitlist.size(); i++) {
-                    shitlist.get(i).moveshit();
-                    shitlist.get(i).drawshit();
-                }
-                // println(gameover);
             }
         textSize(80);
         fill(0,255,0);

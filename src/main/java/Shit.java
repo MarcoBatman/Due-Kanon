@@ -5,8 +5,8 @@ public class Shit {
 
 PApplet p;
 PVector location = new PVector();
-PVector velocity = new PVector();
-PVector accelaration = new PVector(0,(float)0.2);
+PVector velocity = new PVector(0,2);
+
 
 
 
@@ -22,7 +22,7 @@ PVector accelaration = new PVector(0,(float)0.2);
         p.ellipse(location.x+31,location.y+20,10,10);
     }
     void moveshit(){
-    velocity.add(accelaration);
+
     location.add(velocity);
     }
 
