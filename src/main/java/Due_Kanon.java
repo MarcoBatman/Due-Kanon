@@ -91,6 +91,7 @@ public class Due_Kanon extends PApplet {
         fill(0,255,0);
 
         if(gameover){
+            clear();
             text("Du er blevet skidt på",0,height/2);
         }
 
