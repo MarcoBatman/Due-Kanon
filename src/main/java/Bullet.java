@@ -64,7 +64,7 @@ duckList.remove(i);
         p.translate(cLocation.x,cLocation.y);
 
         p.rotate(angle);
-        p.image(iL.dr,bLocation.x,bLocation.y);
+        p.image(iL.bulletdue,bLocation.x,bLocation.y);
         p.imageMode(p.CORNER);
         p.popMatrix();
 

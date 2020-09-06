@@ -112,7 +112,7 @@ public class Due_Kanon extends PApplet {
     }
 
     public void keyPressed() {
-        
+
         pCannon.setMove(keyCode, true);
 
 
