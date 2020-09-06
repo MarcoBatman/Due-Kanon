@@ -29,13 +29,12 @@ public class Due_Kanon extends PApplet {
     public void setup() {
         super.setup();
        iL.load();
-        duckList.add(new Ducks(this,100, (int) random(20,100),5,iL));
+        duckList.add(new Ducks(this,(int) random(50,width-50), (int) random(20,100),5,iL));
 
     }
 
     imageLoader iL= new imageLoader(this);
     Cactus cac1 = new Cactus(this,200,iL);
-    //Ducks duck1 = new Ducks(this,100, (int) random(20,100),5,iL);
     Cannon pCannon = new Cannon(this,width,height,iL);
     Barrel pBarrel = new Barrel(this,pCannon,iL,duckList);
 

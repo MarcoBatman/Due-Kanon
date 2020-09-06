@@ -54,7 +54,7 @@ return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle
 
         if (((bigX>dX && bigX<dX+dLX)||(smallX>dX && smallX<dX+dLX))&&((smallY>dY && smallY<dY+dLY)||(bigY>dY && bigY<dY+dLY))) {
 duckList.remove(i);
-            duckList.add(new Ducks(p,100, (int) p.random(20,100),5,iL));
+            duckList.add(new Ducks(p,(int) p.random(50,p.width-50), (int) p.random(20,100),5,iL));
         }
     }}
     void display(){
