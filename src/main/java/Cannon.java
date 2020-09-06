@@ -7,6 +7,8 @@ public class Cannon {
     boolean dUp, dDown, dLeft, dRight;
     int width;
     int height;
+    boolean cacLeft;
+    boolean cacRight;
     imageLoader iL;
     PImage tank;
     PVector CVelocity = new PVector(1, 0);
@@ -31,13 +33,13 @@ public class Cannon {
 
         if (dUp) mY -= 1;
         if (dDown) mY += 1;
-        if (dLeft) {
+        if (dLeft&&cacLeft== false) {
             if (CLocation.x == 0) {
                 mX += 1;
             }
             mX -= 1;
         }
-        if (dRight) {
+        if (dRight&&cacRight== false) {
             if (CLocation.x + 26 * 3 == width) {
                 mX -= 1;
             }

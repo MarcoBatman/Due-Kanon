@@ -26,6 +26,14 @@ public class Cactus {
     void imHit(Cannon tank){
         if(location.x+46<=tank.CLocation.x+26*3 && location.x+80>tank.CLocation.x){
             p.println("vi rammer");
+            if(location.x < tank.CLocation.x)
+                tank.cacLeft = true;
+                else
+                tank.cacRight = true;
         }
+        else{
+            tank.cacLeft = false;
+            tank.cacRight = false;
+        }}
     }
-}
+
