@@ -22,4 +22,10 @@ public class Cactus {
     void drawcac(){
         p.image(iL.d,location.x,p.height-150,64*2,64*2);
     }
+
+    void imHit(Cannon tank){
+        if(location.x+46<=tank.CLocation.x+26*3 && location.x+80>tank.CLocation.x){
+            p.println("vi rammer");
+        }
+    }
 }

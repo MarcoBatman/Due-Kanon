@@ -74,6 +74,7 @@ public class Due_Kanon extends PApplet {
                     alredyRemoved = false;
                 }
             }
+            cac1.imHit(pCannon);
             textSize(30);
             text(pCannon.hp,200,200);
 
@@ -111,7 +112,7 @@ public class Due_Kanon extends PApplet {
     }
 
     public void keyPressed() {
-
+        
         pCannon.setMove(keyCode, true);
 
 
