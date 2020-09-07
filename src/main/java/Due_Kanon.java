@@ -47,7 +47,7 @@ public class Due_Kanon extends PApplet {
             image(iL.sky, 0, 0);
             for (int i = 0; i < cacList.size(); i++){
                 cacList.get(i).drawcac();
-                cacList.get(i).imHit(pCannon);
+
 
             }
 
@@ -55,8 +55,15 @@ public class Due_Kanon extends PApplet {
                 cacList.add(new Cactus(this,(int) random(0,width),iL));
                 scorecheck = score;
             }
+
+            pCannon.cacLeft=false;
+            pCannon.cacRight=false;
+            pCannon.collideCactus(cacList);
             pCannon.display();
-            pBarrel.display();
+            if(pBarrel.display()==true) {
+                score++;
+
+            }
             pCannon.checkVel();
             pCannon.move();
             pBarrel.cannonPlacement();

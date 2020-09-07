@@ -21,7 +21,7 @@ public class Cactus {
     void drawcac(){
         p.image(iL.d,location.x,location.y);
     }
-
+/*
     void imHit(Cannon tank){
         if(location.x+46<=tank.CLocation.x+26*3 && location.x+80>tank.CLocation.x){
             p.println("vi rammer");
@@ -33,6 +33,6 @@ public class Cactus {
         else{
             tank.cacLeft = false;
             tank.cacRight = false;
-        }}
+        }}*/
     }
 

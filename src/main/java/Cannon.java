@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PVector;
 
+import java.util.ArrayList;
+
 public class Cannon {
     PApplet p;
     boolean dUp, dDown, dLeft, dRight;
@@ -65,6 +67,23 @@ public class Cannon {
 
 
     }
+
+    void collideCactus(ArrayList<Cactus> cacList){
+
+        for(int i =0;cacList.size()>i;i++){
+
+            if(cacList.get(i).location.x+46<=CLocation.x+26*3 && cacList.get(i).location.x+80>CLocation.x){
+                p.println("vi rammer");
+                if(cacList.get(i).location.x < CLocation.x)
+                    cacLeft = true;
+                else
+                    cacRight = true;
+            }
+
+            }}
+
+
+
 
     boolean setMove(int k, boolean b) {
 
