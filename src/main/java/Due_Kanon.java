@@ -98,7 +98,8 @@ public class Due_Kanon extends PApplet {
 
         if(gameover){
             clear();
-            text("Du er blevet skidt på",0,height/2);
+            text("Du er blevet skidt på",0,120);
+            text("Din score blev: " + score,0,250);
         }
 
 
