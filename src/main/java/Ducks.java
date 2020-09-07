@@ -3,7 +3,7 @@ import processing.core.PImage;
 import processing.core.PVector;
 
 public class Ducks {
-    imageLoader iL;
+    ImageLoader iL;
     PImage dl;
     PImage dr;
     PVector location = new PVector();
@@ -17,7 +17,7 @@ location.set(0,0);
 velocity.set(0,0);
     }
 
-    Ducks(PApplet p,int x,int y,int speedX,imageLoader iL){
+    Ducks(PApplet p, int x, int y, int speedX, ImageLoader iL){
        location.set(x,y);
        this.p =p;
        velocity.set(speedX,0);

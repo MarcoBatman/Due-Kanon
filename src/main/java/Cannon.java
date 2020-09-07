@@ -9,14 +9,14 @@ public class Cannon {
     int height;
     boolean cacLeft;
     boolean cacRight;
-    imageLoader iL;
+    ImageLoader iL;
     PImage tank;
     PVector CVelocity = new PVector(1, 0);
     PVector CLocation = new PVector();
     int hp =3;
 
 
-    Cannon(PApplet p, int width, int height,imageLoader iL) {
+    Cannon(PApplet p, int width, int height, ImageLoader iL) {
         this.p = p;
         this.iL = iL;
         this.height = height;
