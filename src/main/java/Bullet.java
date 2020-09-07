@@ -14,7 +14,7 @@ public class Bullet {
     ArrayList<Ducks> duckList;
     ArrayList<Cactus> cacList;
     int score;
-    Bullet(float a, float x, float y, PApplet p,imageLoader iL,ArrayList<Ducks>aD,int score,ArrayList<Cactus> cD){
+    Bullet(float a, float x, float y, PApplet p,ImageLoader iL,ArrayList<Ducks>aD,int score,ArrayList<Cactus> cD){
 
          angle=a;
          cLocation.x = x;

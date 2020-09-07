@@ -13,12 +13,12 @@ public class Barrel {
     Cannon c;
     PApplet p;
 
-    imageLoader iL;
+    ImageLoader iL;
     int score;
 
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
-    Barrel(PApplet p,Cannon c,imageLoader iL,ArrayList<Ducks> aD,int score,ArrayList<Cactus> aC){
+    Barrel(PApplet p,Cannon c,ImageLoader iL,ArrayList<Ducks> aD,int score,ArrayList<Cactus> aC){
 
         this.c=c;
         this.p = p;
