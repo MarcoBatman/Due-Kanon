@@ -12,14 +12,16 @@ public class Barrel {
     Cannon c;
     PApplet p;
     imageLoader iL;
+    int score;
 
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
-    Barrel(PApplet p,Cannon c,imageLoader iL,ArrayList<Ducks> aD){
+    Barrel(PApplet p,Cannon c,imageLoader iL,ArrayList<Ducks> aD,int score){
         this.c=c;
         this.p = p;
         this.iL = iL;
         duckList=aD;
+        this.score=score;
     }
 
     Barrel(){
@@ -37,7 +39,7 @@ public class Barrel {
     }
 
     void shoot(){
-bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL,duckList));
+bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL,duckList,score));
 
 
 
@@ -49,6 +51,9 @@ void display(){
 
 
     for(int i=0;i<bullets.size();i++) {
+        if(score<bullets.get(i).score){
+        score = bullets.get(i).score;
+        }
         bullets.get(i).display();
         bullets.get(i).checkCollide();
       if(bullets.get(i).move()==true) {

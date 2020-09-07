@@ -12,14 +12,16 @@ public class Bullet {
     PApplet p;
     float angle;
     ArrayList<Ducks> duckList;
+    int score;
 
-    Bullet(float a, float x, float y, PApplet p,imageLoader iL,ArrayList<Ducks>aD){
+    Bullet(float a, float x, float y, PApplet p,imageLoader iL,ArrayList<Ducks>aD,int score){
          angle=a;
          cLocation.x = x;
          cLocation.y=y;
          this.p = p;
          this.iL = iL;
 duckList = aD;
+this.score=score;
     }
     float smallestX(float x,float y){
 
@@ -54,7 +56,9 @@ return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle
 
         if (((bigX>dX && bigX<dX+dLX)||(smallX>dX && smallX<dX+dLX))&&((smallY>dY && smallY<dY+dLY)||(bigY>dY && bigY<dY+dLY))) {
 duckList.remove(i);
+score++;
             duckList.add(new Ducks(p,(int) p.random(50,p.width-50), (int) p.random(20,100),5,iL));
+
         }
     }}
     void display(){
