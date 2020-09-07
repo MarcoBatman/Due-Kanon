@@ -12,7 +12,7 @@ public class Due_Kanon extends PApplet {
     int height = 873/2;
     boolean alredyRemoved;
     int score;
-
+    int scorecheck;
     ArrayList<Shit> shitlist= new ArrayList<>();
     ArrayList<Ducks> duckList= new ArrayList<>();
     ArrayList<Cactus> cacList= new ArrayList<>();
@@ -30,7 +30,8 @@ public class Due_Kanon extends PApplet {
         super.setup();
        iL.load();
         duckList.add(new Ducks(this,(int) random(50,width-50), (int) random(20,100),5,iL));
-        cacList.add(new Cactus(this,200,iL));
+        cacList.add(new Cactus(this,(int) random(0,350),iL));
+        cacList.add(new Cactus(this,(int) random(600,width),iL));
     }
 
     ImageLoader iL= new ImageLoader(this);
@@ -50,6 +51,10 @@ public class Due_Kanon extends PApplet {
 
             }
 
+            if(score%2==0&& scorecheck != score&& score != 0){
+                cacList.add(new Cactus(this,(int) random(0,width),iL));
+                scorecheck = score;
+            }
             pCannon.display();
             pBarrel.display();
             pCannon.checkVel();

@@ -74,7 +74,7 @@ return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle
 
             if((((bigX>cX && bigX<cX+cLX)||(smallX>cX && smallX<cX+cLX))&&((smallY>cY && smallY<cY+cLY)||(bigY>cY && bigY<cY+cLY)))){
             cacList.remove(i);
-            score++;
+
             }
 
         }
