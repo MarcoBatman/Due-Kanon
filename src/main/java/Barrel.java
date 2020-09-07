@@ -5,23 +5,28 @@ import java.util.ArrayList;
 
 public class Barrel {
     ArrayList<Ducks> duckList;
+    ArrayList<Cactus> cacList;
     PVector bLocation = new PVector();
     PVector vMouse = new PVector();
    float x,y;
    float angle;
     Cannon c;
     PApplet p;
-    imageLoader iL;
+
+    ImageLoader iL;
     int score;
 
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
-    Barrel(PApplet p,Cannon c,imageLoader iL,ArrayList<Ducks> aD,int score){
+    Barrel(PApplet p,Cannon c,ImageLoader iL,ArrayList<Ducks> aD,int score,ArrayList<Cactus> aC){
+
         this.c=c;
         this.p = p;
         this.iL = iL;
         duckList=aD;
+        cacList= aC;
         this.score=score;
+
     }
 
     Barrel(){
@@ -39,7 +44,10 @@ public class Barrel {
     }
 
     void shoot(){
-bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL,duckList,score));
+
+        if(bullets.size()==0)
+bullets.add(new Bullet(angle-p.radians(90),bLocation.x,bLocation.y,p,iL,duckList,score,cacList));
+
 
 
 

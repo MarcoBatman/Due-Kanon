@@ -1,10 +1,10 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class imageLoader {
+public class ImageLoader {
     PApplet p;
     PImage tank,dl,dr,d,sky,barrel,bulletdue;
-    imageLoader(PApplet p){
+    ImageLoader(PApplet p){
         this.p=p;
 
     }
@@ -16,6 +16,7 @@ void load(){
     dl = p.loadImage("Duck Duck Go Left Trim.png");
     dr = p.loadImage("Duck Duck Go Right Trim.png");
     d = p.loadImage("New Catus.png");
+    d.resize(64*2,64*2);
     sky =  p.loadImage("skycool.png");
     sky.resize(1830/2,873/2);
     bulletdue = p.loadImage("Bullet due.png");

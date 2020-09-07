@@ -1,6 +1,4 @@
 import processing.core.PApplet;
-import processing.core.PImage;
-import processing.core.PVector;
 
 import java.util.ArrayList;
 
@@ -17,6 +15,7 @@ public class Due_Kanon extends PApplet {
 
     ArrayList<Shit> shitlist= new ArrayList<>();
     ArrayList<Ducks> duckList= new ArrayList<>();
+    ArrayList<Cactus> cacList= new ArrayList<>();
     @Override
     public void settings() {
         super.settings();
@@ -31,13 +30,13 @@ public class Due_Kanon extends PApplet {
         super.setup();
        iL.load();
         duckList.add(new Ducks(this,(int) random(50,width-50), (int) random(20,100),5,iL));
-
+        cacList.add(new Cactus(this,200,iL));
     }
 
-    imageLoader iL= new imageLoader(this);
-    Cactus cac1 = new Cactus(this,200,iL);
+    ImageLoader iL= new ImageLoader(this);
     Cannon pCannon = new Cannon(this,width,height,iL);
-    Barrel pBarrel = new Barrel(this,pCannon,iL,duckList,score);
+    Barrel pBarrel = new Barrel(this,pCannon,iL,duckList,score,cacList);
+
 
     @Override
     public void draw() {
@@ -45,7 +44,12 @@ public class Due_Kanon extends PApplet {
             fill(255);
             clear();
             image(iL.sky, 0, 0);
-            cac1.drawcac();
+            for (int i = 0; i < cacList.size(); i++){
+                cacList.get(i).drawcac();
+                cacList.get(i).imHit(pCannon);
+
+            }
+
             pCannon.display();
             pBarrel.display();
             pCannon.checkVel();
@@ -78,7 +82,6 @@ public class Due_Kanon extends PApplet {
                     alredyRemoved = false;
                 }
             }
-            cac1.imHit(pCannon);
             textSize(30);
             text("HP: " + pCannon.hp,20,50);
             text("Score: " + score,20,100);
