@@ -11,6 +11,7 @@ public class Due_Kanon extends PApplet {
     int width = 1830/2;
     int height = 873/2;
     boolean alredyRemoved;
+    int score;
 
     ArrayList<Shit> shitlist= new ArrayList<>();
     ArrayList<Ducks> duckList= new ArrayList<>();
@@ -34,7 +35,8 @@ public class Due_Kanon extends PApplet {
 
     ImageLoader iL= new ImageLoader(this);
     Cannon pCannon = new Cannon(this,width,height,iL);
-    Barrel pBarrel = new Barrel(this,pCannon,iL,duckList,cacList);
+    Barrel pBarrel = new Barrel(this,pCannon,iL,duckList,score,cacList);
+
 
     @Override
     public void draw() {
@@ -57,7 +59,11 @@ public class Due_Kanon extends PApplet {
             if (duckList.get(i).iShitNow == true) {
                 shitlist.add(new Shit(this, duckList.get(i).location.x, duckList.get(i).location.y));
             }}
-
+            for(int i = 0;i < pBarrel.bullets.size();i++){
+                if(score<pBarrel.bullets.get(i).score){
+                    score = pBarrel.bullets.get(i).score;
+                }
+            }
             for (int i = 0; i < shitlist.size(); i++) {
                 shitlist.get(i).moveshit();
                 shitlist.get(i).drawshit();
@@ -77,7 +83,8 @@ public class Due_Kanon extends PApplet {
                 }
             }
             textSize(30);
-            text("HP: " + pCannon.hp,50,150);
+            text("HP: " + pCannon.hp,20,50);
+            text("Score: " + score,20,100);
 
             if(pCannon.hp == 0){
                 gameover = true;

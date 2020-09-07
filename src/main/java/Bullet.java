@@ -13,8 +13,9 @@ public class Bullet {
     float angle;
     ArrayList<Ducks> duckList;
     ArrayList<Cactus> cacList;
+    int score;
+    Bullet(float a, float x, float y, PApplet p,imageLoader iL,ArrayList<Ducks>aD,int score,ArrayList<Cactus> cD){
 
-    Bullet(float a, float x, float y, PApplet p, ImageLoader iL, ArrayList<Ducks> aD,ArrayList<Cactus> cD){
          angle=a;
          cLocation.x = x;
          cLocation.y=y;
@@ -22,6 +23,8 @@ public class Bullet {
          this.iL = iL;
 duckList = aD;
 cacList =cD;
+this.score=score;
+
     }
     float smallestX(float x,float y){
 
@@ -60,6 +63,7 @@ return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle
 
             //Duck Collsion
         if (((bigX>dX && bigX<dX+dLX)||(smallX>dX && smallX<dX+dLX))&&((smallY>dY && smallY<dY+dLY)||(bigY>dY && bigY<dY+dLY))) {
+		score++;
         duckList.remove(i);
         duckList.add(new Ducks(p,(int) p.random(50,p.width-50), (int) p.random(20,100),5,iL));
         }}
@@ -71,6 +75,7 @@ return Math.min(actualLocation.x-x-p.sin(angle)*y,actualLocation.x+x-p.sin(angle
             if((((bigX>cX && bigX<cX+cLX)||(smallX>cX && smallX<cX+cLX))&&((smallY>cY && smallY<cY+cLY)||(bigY>cY && bigY<cY+cLY)))){
             cacList.remove(i);
             }
+
         }
 
     }
