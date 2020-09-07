@@ -75,7 +75,7 @@ public class Due_Kanon extends PApplet {
             }
             cac1.imHit(pCannon);
             textSize(30);
-            text(pCannon.hp,200,200);
+            text("HP: " + pCannon.hp,50,150);
 
             if(pCannon.hp == 0){
                 gameover = true;
